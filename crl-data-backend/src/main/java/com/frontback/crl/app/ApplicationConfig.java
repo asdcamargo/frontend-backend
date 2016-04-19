@@ -10,6 +10,7 @@ import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.MultipartConfigFactory;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -17,8 +18,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.frontback.crl.webfilter.RESTFilter;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "br.com.bry.fw.servidor.repositorios")
-@EntityScan(basePackages = { "br.com.bry.fw.servidor", "com.university.model" })
+@EnableJpaRepositories(basePackages = "com.frontback.crl.repositories")
+@EntityScan(basePackages = { "com.frontback.crl.model" })
+@ComponentScan(basePackages = { "com.frontback.crl.service" })
 class ApplicationConfig {
 
 	@Bean
