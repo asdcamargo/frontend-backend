@@ -41,7 +41,7 @@ public class CRLService extends RESTService {
 	private IAuthorityRepository authorityRepository;
 
 	@ResponseStatus(HttpStatus.OK)
-	@RequestMapping(value = "/save", method = RequestMethod.POST, consumes = "multipart/form-data")
+	@RequestMapping(value = "/crls", method = RequestMethod.POST, consumes = "multipart/form-data")
 	public void upload(@RequestPart("data") @Valid CRL crl,
 			@RequestPart("file") @Valid @NotNull @NotBlank MultipartFile file) throws IOException {
 		byte[] bytes;
@@ -56,7 +56,7 @@ public class CRLService extends RESTService {
 
 	}
 
-	@RequestMapping(value = "/crls/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/crls/file/{id}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	public void save(@PathVariable long id, HttpServletResponse response) throws IOException {
 		CRL lcr = this.crlRepository.findOne(id);
@@ -74,7 +74,7 @@ public class CRLService extends RESTService {
 		this.crlRepository.delete(id);
 	}
 
-	@RequestMapping("/crls")
+	@RequestMapping(value = "/crls", method = RequestMethod.GET)
 	public List<CRLVO> getAll() {
 		List<CRLVO> crls = new ArrayList<CRLVO>();
 		this.crlRepository.findAll().forEach(crl -> crls.add(new CRLVO(crl.getId(), crl.getAuthorityKey())));

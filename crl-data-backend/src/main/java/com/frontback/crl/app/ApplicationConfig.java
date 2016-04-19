@@ -16,6 +16,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.frontback.crl.webfilter.RESTFilter;
+import com.frontback.crl.webfilter.SimpleCORSFilter;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.frontback.crl.repositories")
@@ -42,6 +43,16 @@ class ApplicationConfig {
 	public FilterRegistrationBean restFilter() {
 		FilterRegistrationBean filterRegistration = new FilterRegistrationBean();
 		filterRegistration.setFilter(new RESTFilter());
+		List<String> urlPatterns = new ArrayList<String>();
+		urlPatterns.add("/rest/*");
+		filterRegistration.setUrlPatterns(urlPatterns);
+		return filterRegistration;
+	}
+
+	@Bean
+	public FilterRegistrationBean corsFilter() {
+		FilterRegistrationBean filterRegistration = new FilterRegistrationBean();
+		filterRegistration.setFilter(new SimpleCORSFilter());
 		List<String> urlPatterns = new ArrayList<String>();
 		urlPatterns.add("/rest/*");
 		filterRegistration.setUrlPatterns(urlPatterns);
