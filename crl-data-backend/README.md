@@ -24,7 +24,7 @@ $ java -jar target/crl-data-backend-0.0.1.jar
 * If the frontend application is not running yet go to the frontend and follow the steps to get it up and running.
 * Then you can perform the actions in the frontend app.
 
-## Available REST Ooperations
+## Available REST Operations
 
 * Save a CRL
 * Get a CRL file by its id
