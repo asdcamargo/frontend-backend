@@ -1,0 +1,41 @@
+
+<div ui-view>
+
+	<div ui-view>
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Add CRL</div>
+			<div class="panel-body">
+				<div id="messages" ng-show="concluido" role="alert"
+				class="col-md-12 col-xs-12 mensagens">
+				<div class="alert alert-{{msg_type}} fade in mensagem-{{msg_type}}" role="alert">
+					<a class="close" data-dismiss="alert">&times;</a>
+					<b>{{message_principal}}</b> {{message}}
+				</div>
+			</div>
+			<form role="form" class="horiontal-form">
+				<div class="form-group">
+					<label for="uName">Authority Key: </label>
+					<input name="uName" type="text" ng-model="crl.authorityKey"/>
+				</div> 
+				<div class="form-group">
+					<label>File:</label>
+					<input type="file" ngf-select ng-model="files"/>
+				</div>
+				<div class="form-group">
+					<div ng-show="form.$submitted">
+						<div class="row">Status: {{status}}</div>
+					</div>
+				</div>
+				<button type="submit" ng-click="save(crl, files)" ng-disabled="form.$invalid">Submit</button>
+			</div>
+
+		</form>	
+	</div>
+
+</div>
+
+
+
+
+

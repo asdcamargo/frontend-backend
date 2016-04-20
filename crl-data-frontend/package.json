@@ -1,0 +1,19 @@
+{
+  "name": "pongjs",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Classic Pong game implemented in JS",
+  "repository": "https://github.com/asdcamargo/games-pongjs.git",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 80 -c-1"
+
+   }
+}

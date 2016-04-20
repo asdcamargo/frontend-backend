@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="crl-front">
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+
+	
+
+</head>
+<body>
+
+<div class="container">
+	<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#/home">Home</a></li>
+              <li><a href="#/add-crl"> Add CRL </a></li>
+            	<li><a href="#/crls"> CRLs </a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+
+     </nav>            
+</div>
+
+
+
+<!-- MAIN CONTENT -->
+<div class="container">
+	<div ng-view><span us-spinner="{radius:30, width:8, length: 12}"></span>
+
+  	</div>
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view></div>
+
+</div>
+	<script	src="bower_components/angular/angular.min.js"></script>
+	<script	src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+	<script src="app.js"></script>
+	<!-- <script src="app/js/min/script.js"></script>  -->
+	<script src="components/crls/AddCrlController.js"></script>
+	<script src="components/crls/CrlsController.js"></script>
+	<script src="components/crls/CrlsService.js"></script>
+	<script src="components/crls/ConfigService.js"></script>
+	<script src="resources/scripts/ui-utils.min.js"></script>
+	<script type="text/javascript" src="resources/scripts/ng-file-upload.min.js"></script>
+	<script type="text/javascript" src="resources/scripts/spin.min.js"></script>
+	<script type="text/javascript" src="resources/scripts/angular-spinner.min.js"></script>
+	<script type="text/javascript" src="resources/scripts/angular-loading-spinner.js"></script>
+	
+</body>
+</html>

@@ -1,0 +1,19 @@
+	<div ui-view>
+	<div>
+      {{message}}
+      <table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Chave Autoridade</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="member in membersList">
+							<td>{{member.id}}</td>
+							<td>{{member.chaveAutoridade}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</div>

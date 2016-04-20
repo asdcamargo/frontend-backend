@@ -1,0 +1,57 @@
+
+<div ui-view>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<form name="form" novalidate>
+				<div class="control-group">
+					<label class="control-label" for="uName">Chave Autoridade:</label>
+					<div class="controls">
+						<input type="text" ng-model="member.chaveAutoridade" name="uName"/>
+					</div>
+				</div>
+				<!-- 
+				<div class="control-group">
+					<label class="control-label" for="uEmail">Email:</label>
+					<div class="controls">
+						<input type="email" ng-model="member.email" name="uEmail"/>
+						<div ng-show="form.uEmail.$touched">
+						<span ng-show="form.uEmail.$error.required">Tell us your
+							email.</span> <span ng-show="form.uEmail.$error.email">This is
+							not a valid email.</span>
+					</div>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="uPhone">Phone:</label>
+					<div class="controls">
+						<input type="phone" ng-model="member.phoneNumber" ui-mask="(99)9999-9999" required="true"
+						name="uPhone" />
+						<div ng-show="form.uPhone.$touched">
+						<span ng-show="form.uPhone.$error.required">Tell us your
+							phone.</span> <span ng-show="form.uPhone.$error.phone">This is
+							not a valid Phone.</span>
+					</div>
+				</div>
+				</div>
+				 -->
+				<div class="control-group">
+        			<span class="control-label"> </span>
+        				<div class="controls form-inline">
+					<input type="submit" ng-click="save(member)" value="Save" ng-disabled="form.$invalid"/>
+					</div>
+				</div>
+				<div class="control-group">
+				<div ng-show="form.$submitted">
+					<div class="row">Status: {{status}}</div>
+				</div>
+				<div class="row">
+					<ul>
+						<li ng-repeat="(key, val) in errors">{{key}} - {{val}}</li>
+					</ul>
+				</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
