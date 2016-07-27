@@ -6,14 +6,14 @@ app
 		.factory(
 				'crlsService',
 				['$http', '$q', 'configService', function($http, $q, configService) {
-					var urlServico = configService.urlServico();
+					var url = configService.url();
 					$http.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
 					return {
 						getLcrs : function() {
 
 							var req = {
 								method: 'GET',
-								url: urlServico + '/rest/crls',
+								url: url + '/rest/crls',
 							}
 							var deferred = $q.defer();
 
@@ -39,7 +39,7 @@ app
 									"Content-Type": undefined
 								},
 								method: 'POST',
-								url: urlServico + '/rest/crls',
+								url: url + '/rest/crls',
 								data: formData
 							}
 							$http(req)
